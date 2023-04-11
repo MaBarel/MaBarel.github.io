@@ -1,23 +1,279 @@
-.wrapper{
-    justify-content: center;
+.wrapper {
+    margin: auto;
     display: grid;
-    grid-template-columns: repeat(4, auto);
-    grid-template-rows: repeat(4, auto);
+    grid-template-columns: repeat(4, 200px);
+    grid-template-rows: repeat(3, 200px);
     gap: 10px;
-    align-items: center;
-    border: solid white;
+    justify-content: center;
 }
-.block {
-    background-color: #8ca0ff;
-    width: 100px;
-    height: 100px;
+
+.block1 {
+    background-color: white;
+    grid-column: 2/2;
+    grid-row: 1/1;
 }
-body{
+
+.block2 {
+    background-color: white;
+    grid-column: 3/3;
+    grid-row: 1/1;
+}
+
+.block3 {
+    background-color: white;
+    grid-column: 4/4;
+    grid-row: 1/1;
+}
+
+.block4 {
+    background-color: white;
+    grid-column: 2/2;
+    grid-row: 2/2;
+}
+
+.block5 {
+    background-color: white;
+    grid-column: 3/3;
+    grid-row: 2/2;
+}
+
+.block6 {
+    background-color: white;
+    grid-column: 4/4;
+    grid-row: 2/2;
+}
+
+.block7 {
+    background-color: white;
+    grid-column: 2/2;
+    grid-row: 3/3;
+}
+
+.block8 {
+    background-color: white;
+    grid-column: 3/3;
+    grid-row: 3/3;
+}
+
+.block9 {
+    background-color: #ffffff;
+    grid-column: 4/4;
+    grid-row: 3/3;
+}
+
+body {
     background-color: black;
 }
-.sidebar{
-    background-color: blueviolet;
+
+.sidebar {
+    background-color: white;
+    grid-column: 1/2;
+    grid-row: 1/4;
+}
+
+.block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.blockx,
+.blocko {
+    cursor: not-allowed;
+}
+
+.block.blockx::before,
+.block.blockx::after {
+    content: "";
+    width: 30px;
+    position: absolute;
+    height: 180px;
+    background-color: black;
+}
+
+.block.blockx::before {
+    transform: rotate(45deg);
+}
+
+.block.blockx::after {
+    transform: rotate(-45deg);
+}
+
+.block.blocko::before,
+.block.blocko::after {
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+}
+
+.block.blocko::before {
+    width: 180px;
+    height: 180px;
+    background-color: black;
+}
+
+.block.blocko::after {
+    width: 140px;
+    height: 140px;
+    background-color: white;
+}
+
+.winningMessage {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .9);
+    justify-content: center;
+    color: white;
+    font-size: 5rem;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 5rem;
+    flex-direction: column;
+}
+
+.winningMessagebutton {
+    font-size: 3rem;
+    background-color: white;
+    border: 1px solid black;
+    cursor: pointer;
+    color: black;
+    content: "Restart";
+}
+
+.winningMessage.show {
+    display: flex;
+}
+
+.winningMessagebutton:hover {
+    background-color: black;
+    color: white;
+    border-color: white;
+}
+
+.inputbar {
     width: 100px;
-    height: 325px;
-  
+}
+
+.point {
+    display: flex;
+    flex-direction: column;
+    font-size: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.resetpoint {
+    font-size: 40px;
+    background-color: black;
+    cursor: pointer;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.resetpoint:hover {
+    background-color: gray;
+}
+
+.savebutton {
+    border: 3px solid black;
+    margin-top: 10px;
+    width: 102px;
+    text-align: center;
+    color: white;
+    background-color: black;
+}
+
+.savebutton:hover {
+    color: black;
+    background-color: white;
+}
+
+.removesavebutton {
+    border: 3px solid black;
+    margin-top: 10px;
+    width: 102px;
+    text-align: center;
+    color: white;
+    background-color: black;
+}
+
+.removesavebutton:hover {
+    color: black;
+    background-color: white;
+}
+
+.startscreen {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .9);
+    justify-content: center;
+    color: white;
+    font-size: 5rem;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 5rem;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.startscreen.show {
+    display: flex;
+}
+
+.startpvp {
+    text-align: center;
+    width: 180px;
+    font-size: 3rem;
+    background-color: white;
+    border: 1px solid black;
+    cursor: pointer;
+    color: black;
+}
+
+.startpvp:hover {
+    background-color: black;
+    color: white;
+    border-color: white;
+}
+
+.startpve {
+    text-align: center;
+    width: 180px;
+    font-size: 3rem;
+    background-color: white;
+    border: 1px solid black;
+    cursor: pointer;
+    color: black;
+}
+
+.startpve:hover {
+    background-color: black;
+    color: white;
+    border-color: white;
+}
+
+.winningMessagebuttontwo {
+    font-size: 3rem;
+    background-color: white;
+    border: 1px solid black;
+    cursor: pointer;
+    color: black;
+    content: "Restart";
+}
+
+.highlight {
+    background-color: green;
 }
