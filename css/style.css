@@ -1,3 +1,13 @@
 body {
     background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');
 }
+.img-z{
+    opacity: 50%;
+}
+.text-over{
+    z-index: 10;
+    font-size: 2rem;
+    margin-top: -35%;
+    text-align: center;
+    color: white;
+}
